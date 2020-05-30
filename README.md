@@ -35,6 +35,15 @@ Anticipated changes
 
 This should probably not be the default buildpack behavior. I would anticipate having to set a config variable, or set of variables, such as `AUTO_CONFIGURE_ALL`, `AUTO_CONFIGURE_DB`, `AUTO_CONFIGURE_STATIC`, and maybe one or two more if needed. This way, as a user begins to customize their deployment, they can turn any or all of these flags off and customize that aspect of deployment.
 
+Note about *fake_deploy.txt*
+---
+
+When working on the buildpack, I often need to push this project to heroku repeatedly, without making any meaningful changes to this project. I need a new commit to do that, so I add a line to *fake_deploy.txt* and then commit it:
+
+- `ehco "hi" >> fake_deploy.txt`
+- `git commit -am "Test deploy process."`
+- `git push heroku master`
+
 Questions/ feedback?
 ---
 
