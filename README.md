@@ -25,6 +25,7 @@ The goal is to deploy with as few steps as possible:
 
 - Run `heroku create` from a terminal at the root project directory.
 - Run `heroku buildpacks:set https://github.com/ehmatthes/heroku_buildpack_python.git#master`. This will use the revised buildpack.
+  - Note: For develpment work, this will sometimes be a different branch, `heroku buildpacks:set https://github.com/ehmatthes/heroku_buildpack_python.git#simplify_deploy`.
 - Run `git push heroku master`.
 
 That should be it. This will automatically create a *Procfile*, configure the Heroku database, configure static file management, and modify settings slightly to serve the project from the Heroku environment.
