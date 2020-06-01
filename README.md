@@ -35,6 +35,11 @@ Anticipated changes
 
 This should probably not be the default buildpack behavior. I would anticipate having a set of config variables, such as `AUTO_CONFIGURE_ALL`, `AUTO_CONFIGURE_DB`, `AUTO_CONFIGURE_STATIC`, and maybe one or two more if needed. This way, as a user begins to customize their deployment, they can turn any or all of these flags off and customize each aspect of deployment.
 
+Technical notes
+---
+
+All of the Heroku-specific deployment configuration is done in an `autoconfigure` script, which you can see [here](https://github.com/ehmatthes/heroku-buildpack-python/blob/simplify_deploy/bin/steps/autoconfigure). 
+
 Note about *fake_deploy.txt*
 ---
 
