@@ -24,8 +24,8 @@ To deploy this project to Heroku
 The goal is to deploy with as few steps as possible:
 
 - Run `heroku create` from a terminal at the root project directory.
-- Run `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git#master`. This will use the revised buildpack.
-  - Note: For develpment work, this will sometimes be a different branch, `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git#simplify_deploy`.
+- Run `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git#simplify_deploy`. This will use the revised buildpack.
+- Run `heroku config:set AUTCONFIGURE_ALL=1`. This tells Heroku to automatically configure your project for deployment.
 - Run `git push heroku master`.
 
 That should be it. This will automatically create a *Procfile*, configure the Heroku database, configure static file management, and modify settings slightly to serve the project from the Heroku environment.
@@ -33,7 +33,7 @@ That should be it. This will automatically create a *Procfile*, configure the He
 Anticipated changes
 ---
 
-This should probably not be the default buildpack behavior. I would anticipate having to set a config variable, or set of variables, such as `AUTO_CONFIGURE_ALL`, `AUTO_CONFIGURE_DB`, `AUTO_CONFIGURE_STATIC`, and maybe one or two more if needed. This way, as a user begins to customize their deployment, they can turn any or all of these flags off and customize that aspect of deployment.
+This should probably not be the default buildpack behavior. I would anticipate having a set of config variables, such as `AUTO_CONFIGURE_ALL`, `AUTO_CONFIGURE_DB`, `AUTO_CONFIGURE_STATIC`, and maybe one or two more if needed. This way, as a user begins to customize their deployment, they can turn any or all of these flags off and customize each aspect of deployment.
 
 Note about *fake_deploy.txt*
 ---
