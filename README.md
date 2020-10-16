@@ -24,7 +24,7 @@ To deploy this project to Heroku
 The goal is to deploy with as few steps as possible:
 
 - Run `heroku create` from a terminal at the root project directory.
-- Run `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git#simplify_deploy`. This will use the revised buildpack.
+- Run `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git`. This will use the revised buildpack.
 - Run `heroku config:set AUTCONFIGURE_ALL=1`. This tells Heroku to automatically configure your project for deployment.
 - Run `git push heroku master`.
 
@@ -38,7 +38,7 @@ This should probably not be the default buildpack behavior. I would anticipate h
 Technical notes
 ---
 
-All of the Heroku-specific deployment configuration is done in an `autoconfigure` script, which you can see [here](https://github.com/ehmatthes/heroku-buildpack-python/blob/simplify_deploy/bin/steps/autoconfigure). 
+All of the Heroku-specific deployment configuration is done in an `autoconfigure` script, which you can see [here](https://github.com/ehmatthes/heroku-buildpack-python/blob/master/bin/steps/autoconfigure). 
 
 Note about *fake_deploy.txt*
 ---
