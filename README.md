@@ -7,6 +7,8 @@ There are some external libraries that aim to make this process easier, but lack
 
 Learning Log is a very simple Django project, but it's more than just a Hello World project. This is the Django project from *Python Crash Course*, but I'm thinking about more than just PCC readers when doing this work. The original vision of Heroku was to provide as seamless of a deployment process as possible, while not restraining developers. The goal of this revised buildpack is to automate initial configuration steps, but in a way that developers can then customize without having to undo any of the auto-configuration steps.
 
+This version is set up for testing deployments that use requirements.txt. There is a [separate version](https://github.com/ehmatthes/learning_log_heroku_test_pipfile) for testing deployments that use Pipenv.
+
 Running this project locally
 ---
 
@@ -26,7 +28,7 @@ The goal is to deploy with as few steps as possible:
 - Run `heroku create` from a terminal at the root project directory.
 - Run `heroku buildpacks:set https://github.com/ehmatthes/heroku-buildpack-python.git`. This will use the revised buildpack.
 - Run `heroku config:set AUTCONFIGURE_ALL=1`. This tells Heroku to automatically configure your project for deployment.
-- Run `git push heroku master`.
+- Run `git push heroku main`.
 
 That should be it. This will automatically create a *Procfile*, configure the Heroku database, configure static file management, and modify settings slightly to serve the project from the Heroku environment.
 
@@ -47,7 +49,7 @@ When working on the buildpack, I often need to push this project to heroku repea
 
 - `ehco "hi" >> fake_deploy.txt`
 - `git commit -am "Test deploy process."`
-- `git push heroku master`
+- `git push heroku main`
 
 Questions/ feedback?
 ---
