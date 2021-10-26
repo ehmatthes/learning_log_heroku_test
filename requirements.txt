@@ -1,2 +1,2 @@
 django
-django-bootstrap
+django-bootstrap4
