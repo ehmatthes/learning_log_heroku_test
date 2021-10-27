@@ -1,6 +1,16 @@
 Learning Log - Heroku test project
 ===
 
+Update 10/27/21
+---
+
+Rather than develop a custom Heroku buildpack to make deployment easier for Django projects, I'm developing a custom management command through a pip-installable Django app. That work is at the [django-simple-deploy](https://github.com/ehmatthes/django-simple-deploy) repository.
+
+This project is currently being used to house the test projects for django-simple-deploy, and it will be maintained for that purpose until django-simple-deploy has [its own sample project](https://github.com/ehmatthes/django-simple-deploy/issues/12).
+
+Original description
+---
+
 Deploying a Django project to Heroku is much simpler than deploying to a VPS such as Digital Ocean or Linode. But there are still a number of configuration steps that are confusing to beginners and newcomers, and that could probably be automated.
 
 There are some external libraries that aim to make this process easier, but lack of ongoing maintenance has made some of those libraries difficult to use. The goal of this project is to see how much a revised Python Heroku buildpack can simplify the initial deployment process to Heroku. The goal is to have as few steps as possible between a small to medium size Django project that runs locally on SQLite, and runs sucessfully on Heroku.
